@@ -19,11 +19,6 @@ data "ibm_pi_network" "power_network" {
   pi_network_name      = var.network_name
 }
   
-data "ibm_pi_storage_type" "storage_type" {
-  pi_cloud_instance_id = local.pid
-  pi_network_name      = var.storage_type
-}
-
 resource "ibm_pi_instance" "instance" {
   pi_cloud_instance_id = local.pid
   pi_memory            = var.memory
