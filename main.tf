@@ -18,6 +18,11 @@ data "ibm_pi_network" "power_network" {
   pi_cloud_instance_id = local.pid
   pi_network_name      = var.network_name
 }
+  
+data "ibm_pi_storage_type" "storage_type" {
+  pi_cloud_instance_id = local.pid
+  pi_network_name      = var.storage_type
+}
 
 resource "ibm_pi_instance" "instance" {
   pi_cloud_instance_id = local.pid
@@ -27,7 +32,6 @@ resource "ibm_pi_instance" "instance" {
   pi_proc_type         = var.processor_type
   pi_image_id          = local.catalog_image[0].image_id
   pi_key_pair_name     = data.ibm_pi_key.key.id
-  pi_image_storage_type = var.storage_type
   pi_sys_type          = var.sys_type
   pi_network {
     network_id = data.ibm_pi_network.power_network.id
