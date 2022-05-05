@@ -6,6 +6,7 @@ data "ibm_pi_catalog_images" "catalog_images" {
 
 locals {
   public_image_name = "7200-05-01"
+  pi_image_storage_type = "tier1"
   catalog_image = [for x in data.ibm_pi_catalog_images.catalog_images.images : x if x.name == local.public_image_name]
 }
 
