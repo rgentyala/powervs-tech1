@@ -6,6 +6,11 @@ variable "imagename" {
   description = "Name of the image to be used"
   default     = "Linux-CentOS-8-3"
 }
+variable "storage-typ" {
+  type        = string
+  default     = "tier3"
+  description = "Storage type defined for consuming a volume for OS"
+}
 variable "memory" {
   type        = number
   default     = 4
