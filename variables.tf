@@ -2,9 +2,10 @@ variable "crn" {
   type        = string
   description = "Power Systems Virtual Server CRN"
 }
-variable "imagename" {
-  description = "Name of the image to be used"
-  default     = "Linux-CentOS-8-3"
+variable "image" {
+  type        = string
+  default     = "IBMi-74-05-2984-1"
+  description = "image"
 }
 variable "storage-type" {
   type        = string
