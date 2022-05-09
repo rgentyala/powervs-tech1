@@ -3,6 +3,10 @@ variable "crn" {
   default     = "crn:v1:staging:public:power-iaas:dal12:a/efe5e8b9d3f04b948790fe5499bd18bc:6021a723-bcab-4d3f-9985-d0cb2f864f35::"
   description = "Power Systems Virtual Server CRN"
 }
+variable "imagename" {
+  description = "Name of the image to be used"
+  default     = "Linux-CentOS-8-3"
+}
 variable "memory" {
   type        = number
   default     = 4
