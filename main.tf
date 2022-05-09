@@ -8,9 +8,9 @@ data "ibm_pi_network" "power_network" {
   pi_network_name      = var.network_name
 }
 
-data "ibm_pi_storage_type_capacity" "pool" {
+data "ibm_pi_storage_type_capacity" "type" {
   pi_cloud_instance_id = local.pid
-  pi_storage_pool = "Tier3-Flash-1"
+  pi_storage_type = "Tier3-Flash-1"
 }
 
 resource "ibm_pi_instance" "instance" {
