@@ -37,10 +37,6 @@ variable "sys_type" {
   default     = "s922"
   description = "The type of system on which to create the VM: 's922', 'e880', 'e980', 'e1080', or 's1022'"
 }
-variable "ssh_key_name" {
-  type        = string
-  description = "The name of the public SSH RSA key to use when creating the instance, as defined for the selected Power Systems Virtual Server CRN"
-}
 variable "network_name" {
   type        = string
   description = "The network ID or name to assign to the instance, as defined for the selected Power Systems Virtual Server CRN"
