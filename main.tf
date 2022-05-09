@@ -20,7 +20,7 @@ resource "ibm_pi_instance" "instance" {
   pi_instance_name     = var.instance_name
   pi_proc_type         = var.processor_type
   pi_image_id          = local.catalog_image[0].image_id
-  pi_key_pair_name     = data.ds_image.id
+  pi_key_pair_name     = data.ibm_pi_key.key.id
   pi_sys_type          = var.sys_type
   pi_storage_type = var.storage_tier
   pi_network {
