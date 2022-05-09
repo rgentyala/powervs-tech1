@@ -12,6 +12,11 @@ variable "storage-type" {
   default     = "tier3"
   description = "Storage type defined for consuming a volume for OS"
 }
+variable "storage-tier" {
+  type        = string
+  default     = "block"
+  description = "Storage type defined for consuming a volume for OS"
+}
 variable "memory" {
   type        = number
   default     = 4
