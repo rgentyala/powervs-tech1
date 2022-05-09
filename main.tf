@@ -20,7 +20,7 @@ resource "ibm_pi_instance" "instance" {
   pi_instance_name     = var.instance_name
   pi_proc_type         = var.processor_type
   pi_image_id          = data.ibm_pi_image.ds_image.id
-  pi_sys_type          = var.sys_type
+  pi_sys_type          = "tier3"
   pi_storage_type      = data.ibm_pi_storage_type_capacity.type.pi_storage_type
   pi_network {
     network_id = data.ibm_pi_network.power_network.id
