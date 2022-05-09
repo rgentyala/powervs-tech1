@@ -5,7 +5,7 @@ variable "crn" {
 }
 variable "imagename" {
   description = "Name of the image to be used"
-  default     = "Linux-CentOS-8-3"
+  default     = "IBMi-74-05-2984-1"
 }
 variable "memory" {
   type        = number
