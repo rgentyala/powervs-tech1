@@ -9,11 +9,6 @@ locals {
   catalog_image = [for x in data.ibm_pi_catalog_images.catalog_images.images : x if x.name == local.public_image_name]
 }
 
-data "ibm_pi_key" "key" {
-  pi_cloud_instance_id = local.pid
-  pi_key_name          = var.ssh_key_name
-}
-
 data "ibm_pi_network" "power_network" {
   pi_cloud_instance_id = local.pid
   pi_network_name      = var.network_name
