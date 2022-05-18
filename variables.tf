@@ -34,7 +34,3 @@ variable "networkname" {
   default     = "mypublicnw"
   description = "Name of the network"
 }
-
-variable "sshkey" {
-  description = "Public ssh key"
-}
