@@ -1,5 +1,4 @@
 data "ibm_pi_key" "dskey" {
-  depends_on           = [ibm_pi_key.key]
   pi_cloud_instance_id = var.powerinstanceid
   pi_key_name          = var.sshkeyname
 }
