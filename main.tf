@@ -18,7 +18,7 @@ data "ibm_pi_public_network" "dsnetwork" {
 resource "ibm_pi_volume" "volume" {
   pi_volume_size       = 20
   pi_volume_name       = var.volname
-  pi_volume_type       = "Tier3-Flash-1"
+  pi_volume_type       = "tier1"
   pi_volume_shareable  = true
   pi_cloud_instance_id = var.powerinstanceid // Get it by running cmd "ibmcloud resource service-instances --long"
 }
