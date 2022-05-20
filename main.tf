@@ -35,7 +35,7 @@ data "ibm_pi_image" "powerimages" {
 }
 
 resource "ibm_pi_instance" "test-instance" {
-  pi_memory            = "4"
+  pi_memory            = "5"
   pi_processors        = "2"
   pi_instance_name     = var.instancename
   pi_proc_type         = "shared"
