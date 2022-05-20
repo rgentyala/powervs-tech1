@@ -8,7 +8,7 @@ variable "zone" {
 
 variable "imagename" {
   description = "Name of the image to be used"
-  default     = "Linux-CentOS-8-3"
+  default     = "paytester_v1"
 }
 
 variable "powerinstanceid" {
@@ -16,7 +16,7 @@ variable "powerinstanceid" {
 }
 
 variable "instancename" {
-  default     = "myinstance"
+  default     = "pt_instance"
   description = "Name of the instance"
 }
 
