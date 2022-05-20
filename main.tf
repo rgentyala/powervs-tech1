@@ -36,7 +36,7 @@ data "ibm_pi_image" "powerimages" {
 
 resource "ibm_pi_instance" "test-instance" {
   pi_memory            = "5"
-  pi_processors        = "2"
+  pi_processors        = "0.25"
   pi_instance_name     = var.instancename
   pi_proc_type         = "shared"
   pi_image_id          = data.ibm_pi_image.powerimages.id
