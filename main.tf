@@ -42,6 +42,6 @@ resource "ibm_pi_instance" "test-instance" {
   pi_storage_type      = "tier3"
 
   pi_network {
-    network_id  = data.ibm_pi_network1.network1.id
+    network_id  = data.ibm_pi_network.network1.id
   }
 }
