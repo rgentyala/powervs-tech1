@@ -3,22 +3,22 @@ data "ibm_pi_key" "ssh_key" {
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network1" "network1" {
+data "ibm_pi_network" "network1" {
   pi_network_name = "sn-cripto-aas"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network2" "network2" {
+data "ibm_pi_network" "network2" {
   pi_network_name = "sn-cnx-chn"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network3" "network3" {
+data "ibm_pi_network" "network3" {
   pi_network_name = "sn-cnx-aut1"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network4" "network4" {
+data "ibm_pi_network" "network4" {
   pi_network_name = "sn-cnx-aut2"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
