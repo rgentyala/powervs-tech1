@@ -5,3 +5,7 @@ terraform {
     }
   }
 }
+
+locals {
+  cloud_instance_id = local.pvs_info[7]
+}
