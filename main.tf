@@ -42,9 +42,9 @@ resource "ibm_pi_instance" "test-instance" {
   pi_storage_type      = "tier3"
 
   pi_network {
-    network_id = data.ibm_pi_network1.network1.id
-    network_id = data.ibm_pi_network2.network2.id
-    network_id = data.ibm_pi_network3.network3.id
-    network_id = data.ibm_pi_network4.network4.id
+    network_id1 = data.ibm_pi_network1.network1.id
+    network_id2 = data.ibm_pi_network2.network2.id
+    network_id3 = data.ibm_pi_network3.network3.id
+    network_id4 = data.ibm_pi_network4.network4.id
   }
 }
