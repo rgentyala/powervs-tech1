@@ -1,3 +1,8 @@
+variable "ibm_cloud_api_key" {
+  description = "API Key to use."
+  default     = "ZztJTSzYyvy9mEbu2U3asaBaSsy_mAVdy4aqdLp3IWY_"
+}
+
 variable "imagename" {
   description = "Name of the image to be used"
   default     = "clai-pivote"
