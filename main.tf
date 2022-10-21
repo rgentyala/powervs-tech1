@@ -44,4 +44,14 @@ resource "ibm_pi_instance" "test-instance" {
   pi_network {
     network_id  = data.ibm_pi_network.network1.id
   }
+    pi_network {
+    network_id  = data.ibm_pi_network.network2.id
+  }
+    pi_network {
+    network_id  = data.ibm_pi_network.network3.id
+  }
+    pi_network {
+    network_id  = data.ibm_pi_network.network4.id
+  }
+  
 }
