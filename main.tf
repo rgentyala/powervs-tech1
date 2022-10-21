@@ -3,7 +3,7 @@ data "ibm_pi_key" "ds_instance" {
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network" "power_network" {
+data "ibm_pi_network" "network" {
   pi_network_name = "sn-cripto-aas"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
