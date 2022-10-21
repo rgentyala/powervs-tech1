@@ -1,6 +1,6 @@
-data "ibm_pi_key" "dskey" {
-  pi_cloud_instance_id = var.powerinstanceid
-  pi_key_name          = var.sshkeyname
+data "ibm_pi_key" "ds_instance" {
+  pi_key_name          = "ssh-poc"
+  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
 resource "ibm_pi_network" "power_networks" {
@@ -15,19 +15,12 @@ data "ibm_pi_public_network" "dsnetwork" {
   pi_cloud_instance_id = var.powerinstanceid
 }
 
-resource "ibm_pi_volume" "volume" {
-  pi_volume_size       = 20
-  pi_volume_name       = var.volname
-  pi_volume_type       = "tier1"
-  pi_volume_shareable  = false
-  pi_cloud_instance_id = var.powerinstanceid // Get it by running cmd "ibmcloud resource service-instances --long"
+data "ibm_pi_network" "ds_network" {
+  pi_network_name = "APP"
+  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_volume" "dsvolume" {
-  depends_on           = [ibm_pi_volume.volume]
-  pi_cloud_instance_id = var.powerinstanceid
-  pi_volume_name       = var.volname
-}
+
 
 data "ibm_pi_image" "powerimages" {
   pi_image_name        = var.imagename
@@ -39,11 +32,11 @@ resource "ibm_pi_instance" "test-instance" {
   pi_processors        = "0.25"
   pi_instance_name     = var.instancename
   pi_proc_type         = "shared"
-  pi_image_id          = data.ibm_pi_image.powerimages.id
-  pi_key_pair_name     = data.ibm_pi_key.dskey.id
+  pi_image_id          = var.ibm_pi_image.powerimages.id
+  pi_key_pair_name     = var.ibm_pi_key.dskey.id
   pi_sys_type          = "s922"
   pi_cloud_instance_id = var.powerinstanceid
-  pi_volume_ids        = [data.ibm_pi_volume.dsvolume.id]
+  pi_storage_type      = "tier3"
 
   pi_network {
     network_id = data.ibm_pi_public_network.dsnetwork.id
