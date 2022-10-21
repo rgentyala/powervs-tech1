@@ -20,7 +20,7 @@ resource "ibm_pi_instance" "test-instance" {
   pi_instance_name     = var.instancename
   pi_proc_type         = "shared"
   pi_image_id          = var.ibm_pi_image.powerimages.id
-  pi_key_pair_name     = local.ibm_pi_key.ssh_key.id
+  pi_key_pair_name     = data.ibm_pi_key.ssh_key.id
   pi_sys_type          = "s922"
   pi_storage_type      = "tier3"
 
