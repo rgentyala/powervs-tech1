@@ -1,4 +1,4 @@
-data "ibm_pi_key" "ds_instance" {
+data "ibm_pi_key" "ssh_key" {
   pi_key_name          = "ssh-poc"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
@@ -20,7 +20,7 @@ resource "ibm_pi_instance" "test-instance" {
   pi_instance_name     = var.instancename
   pi_proc_type         = "shared"
   pi_image_id          = var.ibm_pi_image.powerimages.id
-  pi_key_pair_name     = local.ibm_pi_key.key.id
+  pi_key_pair_name     = local.ibm_pi_key.ssh_key.id
   pi_sys_type          = "s922"
   pi_storage_type      = "tier3"
 
