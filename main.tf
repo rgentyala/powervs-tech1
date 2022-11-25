@@ -3,27 +3,11 @@ data "ibm_pi_key" "ssh_key" {
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
-data "ibm_pi_network" "network1" {
-  pi_network_name = "sn-cripto-aas"
-  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-}
 
 data "ibm_pi_network" "network2" {
-  pi_network_name = "sn-cnx-chn"
+  pi_network_name = "sn-cnx-vpn"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
-
-data "ibm_pi_network" "network3" {
-  pi_network_name = "sn-cnx-aut1"
-  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-}
-
-data "ibm_pi_network" "network4" {
-  pi_network_name = "sn-cnx-aut2"
-  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-}
-
-
 
 data "ibm_pi_image" "power_image" {
   pi_cloud_instance_id = local.cloud_instance_id
@@ -41,17 +25,9 @@ resource "ibm_pi_instance" "test-instance" {
   pi_sys_type          = "s922"
   pi_storage_type      = "tier3"
 
-  pi_network {
-    network_id  = data.ibm_pi_network.network1.id
-  }
     pi_network {
     network_id  = data.ibm_pi_network.network2.id
   }
-    pi_network {
-    network_id  = data.ibm_pi_network.network3.id
-  }
-    pi_network {
-    network_id  = data.ibm_pi_network.network4.id
-  }
+
   
 }
