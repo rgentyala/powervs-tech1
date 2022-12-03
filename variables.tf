@@ -15,6 +15,6 @@ variable "crn" {
 }
 
 variable "instancename" {
-  default     = "pt_instance"
+  default     = "newvsi"
   description = "Name of the instance"
 }
