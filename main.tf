@@ -5,7 +5,7 @@ data "ibm_pi_key" "ssh_key" {
 
 
 data "ibm_pi_network" "network2" {
-  pi_network_name = "sn-cnx-vpn"
+  pi_network_name = "testvpn"
   pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
 }
 
