@@ -28,7 +28,7 @@ resource "ibm_pi_instance" "test-instance" {
     network_id  = data.ibm_pi_network.network2.id
   }
 
-      resource "ibm_pi_ike_policy" "example" {
+      resource "ibm_pi_ike_policy" "ikepol" {
         pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
         pi_policy_name          = "ikepol2"
         pi_policy_dh_group = 20
@@ -39,7 +39,7 @@ resource "ibm_pi_instance" "test-instance" {
         pi_policy_authentication = "sha-256"
     }  
   
-      resource "ibm_pi_ipsec_policy" "example" {
+      resource "ibm_pi_ipsec_policy" "ipsecpol" {
         pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
         pi_policy_name          = "ipsecpol2"
         pi_policy_dh_group = 20
