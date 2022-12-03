@@ -57,6 +57,6 @@ resource "ibm_pi_instance" "test-instance" {
         pi_vpn_connection_mode  = "route"
         pi_networks             = data.ibm_pi_network.network2.id
         pi_peer_gateway_address = "169.46.19.238"
-        pi_peer_subnets         = "10.177.131.192/26"
+        pi_peer_subnets         = ["10.177.131.192/26"]
     }
   
