@@ -48,21 +48,16 @@ resource "ibm_pi_instance" "test-instance" {
         pi_policy_pfs = true
         pi_policy_authentication = "hmac-sha-256-128"
     }
-  
-  
-  
-  
+   
   resource "ibm_pi_vpn_connection" "vpndfd" {
         pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
         pi_vpn_connection_name  = "vpndfd"
-        pi_ike_policy_id        = ibm_pi_ike_policy.policy.policy_id
-        pi_ipsec_policy_id      = ibm_pi_ipsec_policy.policy.policy_id
-        pi_vpn_connection_mode  = "policy"
+        pi_ike_policy_id        = data.ibm_pi_ike_policy.policy.ikepol.id
+        pi_ipsec_policy_id      = data.ibm_pi_ipsec_policy.policy.ipsecpol.id
+        pi_vpn_connection_mode  = "route"
         pi_networks             = data.ibm_pi_network.network2.id
-        pi_peer_gateway_address = "10.240.0.4"
-        pi_peer_subnets         = ["10.24.0.0/24"]
+        pi_peer_gateway_address = "169.46.19.238"
+        pi_peer_subnets         = "10.177.131.192/26"
     }
-  
-  
-  
+    
 }
