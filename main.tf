@@ -55,7 +55,7 @@ resource "ibm_pi_instance" "test-instance" {
         pi_ike_policy_id        = "ikepol2"
         pi_ipsec_policy_id      = "ipsecpol2"
         pi_vpn_connection_mode  = "route"
-        pi_networks             = "testvpn"
+        pi_networks             = ["testvpn"]
         pi_peer_gateway_address = "169.46.19.238"
         pi_peer_subnets         = ["10.177.131.192/26"]
     }
