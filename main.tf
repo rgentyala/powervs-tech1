@@ -1,6 +1,6 @@
-resource "ibm_pi_ike_policy" "ikepol" {    
+resource "ibm_pi_ike_policy" "ikepol7" {    
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-  pi_policy_name          = "ikepol6"    
+  pi_policy_name          = "ikepol7"    
   pi_policy_dh_group = 20   
   pi_policy_encryption = "aes-256-cbc"  
   pi_policy_key_lifetime = 28800    
@@ -9,9 +9,9 @@ resource "ibm_pi_ike_policy" "ikepol" {
   pi_policy_authentication = "sha-256"
 }  
 
-resource "ibm_pi_ipsec_policy" "ipsecpol" {
+resource "ibm_pi_ipsec_policy" "ipsecpol7" {
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-  pi_policy_name          = "ipsecpol6"
+  pi_policy_name          = "ipsecpol7"
   pi_policy_dh_group = 20
   pi_policy_encryption = "aes-256-cbc"
   pi_policy_key_lifetime = 28800
