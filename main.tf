@@ -1,6 +1,6 @@
-resource "ibm_pi_ike_policy" "ikepol7" {    
+resource "ibm_pi_ike_policy" "ikepol8" {    
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-  pi_policy_name          = "ikepol7"    
+  pi_policy_name          = "ikepol8"    
   pi_policy_dh_group = 20   
   pi_policy_encryption = "aes-256-cbc"  
   pi_policy_key_lifetime = 28800    
@@ -9,15 +9,26 @@ resource "ibm_pi_ike_policy" "ikepol7" {
   pi_policy_authentication = "sha-256"
 }  
 
-resource "ibm_pi_ipsec_policy" "ipsecpol7" {
+data "ibm_pi_ike_policy" "ikepol8" {
+  pi_ike_policy = "ikepol8"
+  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
+}
+
+resource "ibm_pi_ipsec_policy" "ipsecpol8" {
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
-  pi_policy_name          = "ipsecpol7"
+  pi_policy_name          = "ipsecpol8"
   pi_policy_dh_group = 20
   pi_policy_encryption = "aes-256-cbc"
   pi_policy_key_lifetime = 28800
   pi_policy_pfs = true
   pi_policy_authentication = "hmac-sha-256-128"
 }
+
+data "ibm_pi_ipsec_policy" "ipsecpol8" {
+  pi_ipsec_policy = "ipsecpol8"
+  pi_cloud_instance_id = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"
+}
+
 
 data "ibm_pi_network" "network2" {
   pi_network_name = "testvpn"
@@ -27,8 +38,8 @@ data "ibm_pi_network" "network2" {
 resource "ibm_pi_vpn_connection" "vpndfd2" {
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"  
   pi_vpn_connection_name  = "vpndfd2"
-  pi_ike_policy_id        = ibm_pi_ike_policy.ikepol7.policy_id
-  pi_ipsec_policy_id      = ibm_pi_ipsec_policy.ipsecpol7.policy_id
+  pi_ike_policy_id        = data.ibm_pi_ike_policy.ikepol8.policy_id
+  pi_ipsec_policy_id      = data.ibm_pi_ipsec_policy.ipsecpol8.policy_id
   pi_vpn_connection_mode  = "route"
   pi_networks             = [data.ibm_pi_network.network2.id]
   pi_peer_gateway_address = "169.46.19.238"
