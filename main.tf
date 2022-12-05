@@ -22,8 +22,8 @@ resource "ibm_pi_ipsec_policy" "ipsecpol8" {
 resource "ibm_pi_vpn_connection" "vpndfd2" {
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"  
   pi_vpn_connection_name  = "vpndfd2"
-  pi_ike_policy_id        = ibm_pi_ike_policy.policy.policy_id
-  pi_ipsec_policy_id      = ibm_pi_ipsec_policy.policy.policy_id
+  pi_ike_policy_id        = "ikepol8"
+  pi_ipsec_policy_id      = "ipsecpol8"
   pi_vpn_connection_mode  = "route"
   pi_networks             = ["testvpn"]
   pi_peer_gateway_address = "169.46.19.238"
