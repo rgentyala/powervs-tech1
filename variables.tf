@@ -1,6 +1,6 @@
-variable "ibm_cloud_api_key" {
-  description = "API Key to use."
-  default     = "ZztJTSzYyvy9mEbu2U3asaBaSsy_mAVdy4aqdLp3IWY_"
+variable "api_key" {
+  type        = string
+  description = "API Key"
 }
 
 variable "image_name" {
