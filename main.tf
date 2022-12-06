@@ -19,6 +19,10 @@ resource "ibm_pi_ipsec_policy" "ipsecpol8" {
   pi_policy_authentication = "hmac-sha-256-128"
 }
 
+resource "time_sleep" "wait_3_seconds" {
+  create_duration = "300s"
+}
+
 resource "ibm_pi_vpn_connection" "vpndfd2" {
   pi_cloud_instance_id    = "42175bd4-dc42-4ce0-ac6f-bc55caac4b7c"  
   pi_vpn_connection_name  = "vpndfd2"
