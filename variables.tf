@@ -1,4 +1,4 @@
-variable "api_key" {
+variable "ibm_cloud_api_key" {
   type        = string
   description = "API Key"
 }
