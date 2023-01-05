@@ -10,7 +10,7 @@ variable "image_name" {
 
 variable "crn" {
   type        = string
-  default     = "crn:v1:bluemix:public:power-iaas:us-west:a/<name1>:<name2>::"
+  default     = "crn:v1:bluemix:public:power-iaas:us-south:a/fbd1994ed37b47e3839d109bbe7a95cd:43ddc506-12ba-4a06-882d-18bd92d0f853::"
   description = "Power Systems Virtual Server CRN reference"
 }
 
