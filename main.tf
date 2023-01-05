@@ -33,13 +33,13 @@ resource "ibm_pi_vpn_connection" "rs_vpn_connection" {
         pi_ipsec_policy_id      = ibm_pi_ipsec_policy.poc_ipsec_policy.policy_id
         pi_vpn_connection_mode  = "route"
         pi_networks             = [data.ibm_pi_network.ds_network.id]
-        pi_peer_gateway_address = "x.x.x.x"
-        pi_peer_subnets         = ["y.y.y.y/26"]
+        pi_peer_gateway_address = "76.136.223.88"
+        pi_peer_subnets         = ["192.168.0.12/24"]
     }
 
 data "ibm_pi_key" "ssh_key" {
-  pi_key_name          = "ssh-poc"
-  pi_cloud_instance_id = "4xxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
+  pi_key_name          = "ssh-clip"
+  pi_cloud_instance_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
 }
 
 data "ibm_pi_image" "power_image" {
