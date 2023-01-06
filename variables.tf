@@ -5,7 +5,7 @@ variable "ibm_cloud_api_key" {
 
 variable "image_name" {
   description = "Name of the image to be deployed"
-  default     = "cliptestimage"
+  default     = "clippocimg"
 }
 
 variable "crn" {
