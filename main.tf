@@ -38,7 +38,7 @@ resource "ibm_pi_vpn_connection" "rs_vpn_connection" {
     }
 
 data "ibm_pi_key" "ssh_key" {
-  pi_key_name          = "ssh-clip"
+  pi_key_name          = "ssh-poc"
   pi_cloud_instance_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
 }
 
