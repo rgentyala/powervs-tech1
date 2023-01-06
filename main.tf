@@ -21,7 +21,7 @@ resource "ibm_pi_ipsec_policy" "poc_ipsec_policy" {
     }
 
 data "ibm_pi_network" "ds_network" {
-  pi_network_name = "vpntests"
+  pi_network_name = "ClipNet"
   pi_cloud_instance_id = local.cloud_instance_id
     }
 
