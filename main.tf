@@ -39,7 +39,7 @@ resource "ibm_pi_vpn_connection" "rs_vpn_connection" {
 
 data "ibm_pi_key" "ssh_key" {
   pi_key_name          = "ssh-poc"
-  pi_cloud_instance_id = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx"
+  pi_cloud_instance_id = "43ddc506-12ba-4a06-882d-18bd92d0f853"
 }
 
 data "ibm_pi_image" "power_image" {
